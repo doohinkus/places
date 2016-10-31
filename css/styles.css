@@ -1,6 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Pacifico|Syncopate');
+body{
+  font-family: 'Pacifico', cursive;
+}
 label{
   display:block;
+  font-size: 13pt;
 }
-.details{
+.details {
   display: none;
+}
+button{
+  font-size: 15pt;
+  font-family: 'Syncopate', sans-serif;
+}
+
+#input {
+  display: none;
+}
+
+#list-items {
+  text-align: center;
+  font-size: 18pt;
+  background: linear-gradient(to bottom right, #fff96c , #faf98b);
+  box-shadow: 9px 6px 42px -16px rgba(0,0,0,0.75);
+}
+
+#list-items h2 {
+  padding-top: 20px;
+}
+
+ul {
+  display: block;
+  padding-left: 80px;
+  /*padding-top: 20px;*/
+  padding-bottom: 50px;
+  margin-top: 3em;
+  list-style: decimal;
+
+}
+
+li {
+  text-align: left;
+  /*background: url(http://www.eomf.ou.edu/media/gisday/gallery/postit.png);
+  background-size: contain;
+  background-repeat: no-repeat;*/
+}
+
+li:hover {
+  cursor: pointer;
 }

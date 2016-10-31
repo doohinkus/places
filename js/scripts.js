@@ -5,13 +5,23 @@ function Chores (title, name, time, notes){
   this.notes = notes;
 }
 
+var makeList = function(title, name, time, notes) {
+  if (!title || !name || !time || !notes) {
+    alert('Please enter text in each field')
+  }
+  else {
+    var newChore = new Chores(title, name, time, notes);
+    return newChore;
+  }
+}
+
 Chores.prototype.removeChore = function(){
   return this.title.strike();
 }
 
 
 $(document).ready(function (){
-
+  $("#input").slideDown(1000);
 
   $("#input").submit(function (event){
     event.preventDefault();
@@ -21,7 +31,7 @@ $(document).ready(function (){
     var notes = $("#notes").val();
 
 
-    var newChore = new Chores(title, name, time, notes);
+    newChore = makeList(title, name, time, notes);
 
     var details = "<div class='details'>" +"<p>Name: "+ newChore.name + "</p>"
     +"<p>Time: "+ newChore.time + "</p>"+"<p>Notes: "+ newChore.notes + "</p><button type='button' class='finished btn btn-danger'>Finished Chore</button></div>";
