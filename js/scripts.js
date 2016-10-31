@@ -6,11 +6,7 @@ function Places (locale, landmarks, timeOfYear, notes, image){
   this.image = image;
 }
 
-var placesArray = [];
-
-
 $(document).ready(function (){
-var counter = 0;
 
   $("#input").submit(function (event){
     event.preventDefault();
@@ -20,17 +16,15 @@ var counter = 0;
     var notes = $("#notes").val();
     var image = $("#image").val();
 
-    var newPlace = placesArray.push(new Places(locale, landmarks, timeOfYear, notes, image));
-    $("#places").append("<li value = '" + counter + "'>" + locale + "</li>");
-    counter++;
+    var newPlace = new Places(locale, landmarks, timeOfYear, notes, image);
+    $("#places").append("<li class = 'place'>" + newPlace.locale + "</li>");
 
 
-    $('li').click(function(){
-      var index = $(this).val();
-      console.log(placesArray[index].landmarks, placesArray[index].locale);
-      $("#output").empty().append("<p>Locale: " + placesArray[index].locale + "</p> <p>Landmarks: " + placesArray[index].landmarks + "</p><p>Time of year: " + placesArray[index].timeOfYear + "</p><p>Notes: " + placesArray[index].notes + "</p><p>Image: " + placesArray[index].image + "</p>");
-
+    $('li').last().click(function(){
+      $("#output").empty().append("<p>Locale: " + newPlace.locale + "</p> <p>Landmarks: " + newPlace.landmarks + "</p><p>Time of year: " + newPlace.timeOfYear + "</p><p>Notes: " + newPlace.notes + "</p><p>Image: " + newPlace.image + "</p>");
     });
+
+
 
   })
 
