@@ -29,6 +29,14 @@ $(document).ready(function (){
   $("#witch").animate({top:0}, 1000, down);
 
   }
+  function shrink (){
+    $("#witch").animate({width: 0, height: 0}, 1000, function (){
+      $(this).animate({width: 200, height: 200}, 1000);
+    });
+  }
+  $("#witch").click(function(){
+    shrink();
+  });
 
 
   $("#witch").animate({top: 100}, 1000, up);
