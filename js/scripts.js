@@ -19,9 +19,19 @@ Chores.prototype.removeChore = function(){
   return this.title.strike();
 }
 
-
 $(document).ready(function (){
   $("#input").slideDown(1000);
+  // $("#witch").animate({left: $(window).width()-200}, 1000);
+  function down(){
+  $("#witch").animate({top:30}, 1000, up);
+  }
+  function up(){
+  $("#witch").animate({top:0}, 1000, down);
+
+  }
+
+
+  $("#witch").animate({top: 100}, 1000, up);
 
   $("#input").submit(function (event){
     event.preventDefault();
